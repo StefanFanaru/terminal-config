@@ -1,0 +1,77 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "powerline_symbol": "\ue0b0",
+          "background": "#b77af4",
+          "foreground": "#000000",
+          "style": "powerline",
+          "template": " \udb84\udcfe {{.Context}}{{if .Namespace}} : {{.Namespace}}{{end}} ",
+          "type": "kubectl"
+        },
+        {
+          "background": "#008AD7",
+          "foreground": "#000000",
+          "powerline_symbol": "\ue0b0",
+          "properties": {
+            "source": "cli"
+          },
+          "style": "powerline",
+          "template": " \uebd8 {{ .Name }}",
+          "type": "az"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "background": "#2f2f2f",
+          "foreground": "#b77af4",
+          "style": "diamond",
+          "template": " \uf0e7<#b77af4> \ue0b1</>",
+          "type": "root"
+        },
+        {
+          "background": "#343ca5",
+          "foreground": "#d7d8fd",
+          "powerline_symbol": "\ue0b0",
+          "properties": {
+            "folder_icon": "\uf115",
+            "folder_separator_icon": "/",
+            "home_icon": "\ueb06",
+            "style": "full"
+          },
+          "style": "powerline",
+          "template": " {{ .Path }} ",
+          "type": "path"
+        },
+        {
+            "background": "#575656",
+            "foreground": "#d6deeb",
+            "powerline_symbol": "\ue0b0",
+            "properties": {
+              "threshold": 1000
+            },
+            "style": "powerline",
+            "template": " {{ .FormattedMs }} ",
+            "type": "executiontime"
+          }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "transient_prompt": {
+        "background": "transparent",
+        "foreground": "#ffffff",
+        "template": "{{ .Shell }}> "
+  },
+  "console_title_template": "Cloud CLI",
+  "final_space": true,
+  "version": 2
+}

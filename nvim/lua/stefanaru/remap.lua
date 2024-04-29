@@ -1,0 +1,72 @@
+local map = function(mode, keys, func, desc)
+	if desc == nil or desc == "" then
+		vim.keymap.set(mode, keys, func)
+	else
+		vim.keymap.set(mode, keys, func, { desc = desc })
+	end
+end
+
+-- Show Netrw directory listing when pressing \ twice
+map("n", "\\\\", vim.cmd.Ex)
+
+-- Move lines when they are visually selected
+map("v", "J", ":m '>+1<CR>gv=gv")
+map("v", "K", ":m '<-2<CR>gv=gv")
+
+-- Add new empty lines
+map("n", "<Enter>", "o<ESC>")
+
+-- Keep cursor in place
+map("n", "J", "mzJ`z")
+map("n", "<C-d>", "<C-d>zz")
+map("n", "<C-u>", "<C-u>zz")
+map("n", "n", "nzzzv")
+map("n", "N", "Nzzzv")
+
+-- When pasting over preserve initial yanked value
+map("x", "<leader>p", [["_dP]])
+
+-- Allow copying into system clipboard
+map({ "n", "v" }, "<leader>y", [["+y]])
+map("n", "<leader>Y", [["+Y]])
+
+-- Make C-c work in visual block
+map("i", "<C-c>", "<Esc>")
+
+-- Search and replace
+map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+-- Diagnostic keymaps
+map("n", "[d", vim.diagnostic.goto_prev, "Go to previous [D]iagnostic message")
+map("n", "]d", vim.diagnostic.goto_next, "Go to next [D]iagnostic message")
+map("n", "<leader>e", vim.diagnostic.open_float, "Show diagnostic [E]rror messages")
+map("n", "<leader>q", vim.diagnostic.setloclist, "Open diagnostic [Q]uickfix list")
+
+-- Exit terminal mode easier
+map("t", "<Esc><Esc>", "<C-\\><C-n>", "Exit terminal mode")
+
+-- TIP: Disable arrow keys in normal mode
+map("n", "<left>", '<cmd>echo "Use h to move!!"<CR>')
+map("n", "<right>", '<cmd>echo "Use l to move!!"<CR>')
+map("n", "<up>", '<cmd>echo "Use k to move!!"<CR>')
+map("n", "<down>", '<cmd>echo "Use j to move!!"<CR>')
+
+-- Keybinds to make split navigation easier.
+--  Use CTRL+<hjkl> to switch between windows
+--  See `:help wincmd` for a list of all window commands
+map("n", "<C-h>", "<C-w><C-h>", "Move focus to the left window")
+map("n", "<C-l>", "<C-w><C-l>", "Move focus to the right window")
+map("n", "<C-j>", "<C-w><C-j>", "Move focus to the lower window")
+map("n", "<C-k>", "<C-w><C-k>", "Move focus to the upper window")
+
+-- Toggle max column line
+map("n", "<leader>1", function()
+	if vim.opt.colorcolumn:get()[1] == "120" then
+		vim.opt.colorcolumn = ""
+	else
+		vim.opt.colorcolumn = "120"
+	end
+end)
+
+-- the max column line that appears on <leader>1 will be grey
+vim.cmd([[highlight ColorColumn ctermbg=grey guibg=grey]])

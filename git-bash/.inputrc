@@ -1,0 +1,25 @@
+# ATENTION! This file must also be present at $HOME location because set bell-style none 
+# is not working otherwise and the terminal window of Windows Terminal will flash white
+
+set bell-style none
+#set echo-control-characters off
+# The first TAB key press will display a list that match the given prefix.
+# The next TAB key press will start cycling through the available choices.
+set menu-complete-display-prefix on
+
+# Display completion matches upon the first press of the TAB key.
+set show-all-if-ambiguous on
+
+
+#Enable colors when completing filenames and directories.
+set colored-stats on
+
+
+# Completion matches of multiple items highlight the matching prefix in color.
+set colored-completion-prefix on
+
+# Ignore case when completing.
+set completion-ignore-case on
+
+# Treat hypens and underscores as equivalent when completing.
+set completion-map-case on

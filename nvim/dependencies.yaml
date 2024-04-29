@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
+# winget configure -f depdendencies.yaml
+properties:
+  configurationVersion: "0.2.0"
+  resources:
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: FD
+      directives:
+        description: Install fd
+        allowPrerelease: true
+      settings:
+        id: sharkdp.fd
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: FZF
+      directives:
+        description: Install fzf
+        allowPrerelease: true
+      settings:
+        id: junegunn.fzf
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Ripgrep
+      directives:
+        description: Install Ripgrep
+        allowPrerelease: true
+      settings:
+        id: BurntSushi.ripgrep.MSVC
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: LazyGit
+      directives:
+        description: Install LazyGit
+        allowPrerelease: true
+      settings:
+        id: JesseDuffield.lazygit
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: JQ
+      directives:
+        description: Install JQ
+        allowPrerelease: true
+      settings:
+        id: jqlang.jq
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: CMake
+      directives:
+        description: Install Cmake
+        allowPrerelease: true
+      settings:
+        id: Kitware.CMake
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: CMake
+      directives:
+        description: Install Cmake
+        allowPrerelease: true
+      settings:
+        id: 7zip.7zip
+        source: winget
