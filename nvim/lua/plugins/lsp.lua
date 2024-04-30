@@ -115,9 +115,9 @@ return {
 
 				require("lsp_signature").on_attach({ hint_enable = false }, event.buf)
 				-- Toggle LSP signature help
-				vim.keymap.set({ "n" }, "<C-k>", function()
+				vim.keymap.set({ "n" }, "<leader>k", function()
 					require("lsp_signature").toggle_float_win()
-				end, { silent = true, noremap = true, desc = "toggle signature" })
+				end, { silent = true, noremap = true, desc = "Toggle signature" })
 				-- The following two autocommands are used to highlight references of the
 				-- word under your cursor when your cursor rests there for a little while.
 				--    See `:help CursorHold` for information about when this is executed
@@ -143,7 +143,7 @@ return {
 		--  When you add nvim-cmp, luasnip, etc. Neovim now has *more* capabilities.
 		--  So, we create new capabilities with nvim cmp, and then broadcast that to the servers.
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
-		--capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
+		capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
 		-- Enable the following language servers
 		--  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
@@ -183,7 +183,32 @@ return {
 					},
 				},
 			},
+			prettier = {},
+
+			bashls = {
+				cmd = { "bash-language-server", "start" },
+				filetypes = { "sh", "bash" },
+			},
+			shfmt = {},
+			shellcheck = {},
+			eslint_d = {
+				settings = {
+					workingDirectory = {
+						mode = "location",
+					},
+				},
+			},
+			-- Uncomment this if you want default eslint from vscode language server
+			-- and comment the block from above
+			-- eslint = {
+			-- 	settings = {
+			-- 		workingDirectory = {
+			-- 			mode = "location",
+			-- 		},
+			-- 	},
+			-- },
 		}
+		-- require('lspconfig').eslint.setup{}
 		-- Install C# LSP
 		require("roslyn").setup({
 			dotnet_cmd = "dotnet", -- this is the default

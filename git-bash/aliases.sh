@@ -19,5 +19,4 @@ alias rm='rm -iv'
 alias vim='nvim'
 
 # NOTE: CDs
-alias cdp='cd /x/Lectra/digital-platform'
 alias cdvim='cd /x/CLI/terminal-config/nvim'

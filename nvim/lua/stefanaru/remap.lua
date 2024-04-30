@@ -7,7 +7,7 @@ local map = function(mode, keys, func, desc)
 end
 
 -- Show Netrw directory listing when pressing \ twice
-map("n", "\\\\", vim.cmd.Ex)
+map("n", "\\\\", vim.cmd.Ex, "Show netrw")
 
 -- Move lines when they are visually selected
 map("v", "J", ":m '>+1<CR>gv=gv")
@@ -24,17 +24,17 @@ map("n", "n", "nzzzv")
 map("n", "N", "Nzzzv")
 
 -- When pasting over preserve initial yanked value
-map("x", "<leader>p", [["_dP]])
+map("x", "<leader>p", [["_dP]], "Paste while keeping registry")
 
 -- Allow copying into system clipboard
-map({ "n", "v" }, "<leader>y", [["+y]])
-map("n", "<leader>Y", [["+Y]])
+map({ "n", "v" }, "<leader>y", [["+y]], "Copy to system registry")
+map("n", "<leader>Y", [["+Y]], "Copy to system registry")
 
 -- Make C-c work in visual block
 map("i", "<C-c>", "<Esc>")
 
 -- Search and replace
-map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+map("n", "<leader>h", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], "Seach and replace current word")
 
 -- Diagnostic keymaps
 map("n", "[d", vim.diagnostic.goto_prev, "Go to previous [D]iagnostic message")
@@ -66,7 +66,7 @@ map("n", "<leader>1", function()
 	else
 		vim.opt.colorcolumn = "120"
 	end
-end)
+end, "Toggle max column line")
 
 -- the max column line that appears on <leader>1 will be grey
 vim.cmd([[highlight ColorColumn ctermbg=grey guibg=grey]])

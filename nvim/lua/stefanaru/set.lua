@@ -17,7 +17,7 @@ vim.opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .. "/CLI/.vim/undodir"
 vim.opt.undofile = true
 
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
@@ -43,3 +43,8 @@ vim.opt.smartcase = true
 
 vim.opt.splitright = true
 vim.opt.inccommand = "split"
+
+if os.getenv("IS_BASH") == "true" then
+	vim.opt.shellcmdflag = "-c"
+	-- vim.opt.ssl = true
+end

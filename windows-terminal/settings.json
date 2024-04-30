@@ -31,6 +31,14 @@
                 "splitMode": "duplicate"
             },
             "keys": "alt+shift+d"
+        },
+        {
+            "command": 
+            {
+                "action": "sendInput",
+                "input": "\u001b[21~"
+            },
+            "keys": "ctrl+space"
         }
     ],
     "copyFormatting": "none",
