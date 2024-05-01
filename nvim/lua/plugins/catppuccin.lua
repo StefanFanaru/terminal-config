@@ -14,9 +14,6 @@ return {
 		},
 		transparent_background = true,
 	},
-	-- config = function()
-	-- vim.api.nvim_set_hl(0, "LspSignatureActiveParameter", { fg = "#FF0000", bg = "#00FF00" })
-	-- end,
 	init = function()
 		vim.cmd("colorscheme catppuccin")
 		-- Fix highlight for lsp-signature.nvim plugin to show currently active parameter in the signature

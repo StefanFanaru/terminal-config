@@ -1,12 +1,15 @@
-source /x/CLI/terminal-config/git-bash/env-variables.sh
-source /x/CLI/terminal-config/git-bash/aliases.sh
-source /x/CLI/terminal-config/git-bash/terminal-profiles.sh
-source /x/CLI/bash-scripts/kubectlextensions.sh
-source /x/CLI/bash-scripts/azureextensions.sh
-source /x/CLI/bash-scripts/gitlabextensions.sh
-source /x/CLI/bash-scripts/dailyextensions.sh
-source /x/CLI/bash-scripts/cdp.sh
-#
+#! /bin/bash
+source ./env-variables.sh
+source ./aliases.sh
+source ./terminal-profiles.sh
+
+source X:/CLI/bash-scripts/kubectlextensions.sh
+source X:/CLI/bash-scripts/kubectlextensions.sh
+source X:/CLI/bash-scripts/azureextensions.sh
+source X:/CLI/bash-scripts/gitlabextensions.sh
+source X:/CLI/bash-scripts/dailyextensions.sh
+source X:/CLI/bash-scripts/cdp.sh
+
 set -f
 
 tfswitch(){
@@ -14,7 +17,7 @@ tfswitch(){
         echo "Please provide the environment parameter: tfswitch dev/prod/current"
         return
     fi
-    .  /x/CLI/bash-scripts/tfswitch/$1-vars.sh
+    .  X:/CLI/bash-scripts/tfswitch/$1-vars.sh
 }
 
 currentSub(){
@@ -31,7 +34,7 @@ clearTerraform(){
 }
 
 deploy(){
-  .  /x/CLI/bash-scripts/deploy-app.sh "$@" --chartsPath /g/Gemini/PIPELINES/charts/webapp
+  .  X:/CLI/bash-scripts/deploy-app.sh "$@" --chartsPath /g/Gemini/PIPELINES/charts/webapp
 }
 
 # # Load Angular CLI autocompletion.

@@ -59,7 +59,22 @@ return { -- Fuzzy Finder (files, lsp, etc)
 					i = {
 						["<esc>"] = actions.close,
 						["<c-enter>"] = "to_fuzzy_refine",
+						["<C-e>"] = require("telescope.actions.layout").toggle_preview,
 					},
+				},
+				file_ignore_patterns = {
+					".git/",
+					".cache",
+					"build/",
+					"%.class",
+					"%.pdf",
+					"%.mkv",
+					"%.mp4",
+					"%.zip",
+					"bin/",
+					"obj/",
+					".idea",
+					"node_modules/",
 				},
 				-- path_display = { "filename_first" },
 				-- path_display = function(opts, path)
