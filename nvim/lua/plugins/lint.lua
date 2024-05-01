@@ -10,7 +10,7 @@ return {
 			-- }
 
 			lint.linters_by_ft["markdown"] = { "markdownlint" }
-			lint.linters_by_ft["json"] = { "jsonlint" }
+			-- lint.linters_by_ft["json"] = { "jsonlint" }
 			lint.linters_by_ft["dockerfile"] = { "hadolint" }
 			lint.linters_by_ft["terraform"] = { "tflint" }
 			-- If you want  to enable default eslint from vscode language servers, then comment this,

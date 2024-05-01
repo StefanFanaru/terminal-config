@@ -13,7 +13,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	{ import = "plugins" },
+	spec = "plugins",
+	change_detection = { notify = false },
 }, {
 	ui = {
 		-- If you are using a Nerd Font: set icons to an empty table which will use the
@@ -34,5 +35,4 @@ require("lazy").setup({
 			lazy = "💤 ",
 		},
 	},
-	change_detection = { notify = false },
 })

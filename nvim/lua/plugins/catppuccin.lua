@@ -22,9 +22,4 @@ return {
 		-- Fix highlight for lsp-signature.nvim plugin to show currently active parameter in the signature
 		vim.api.nvim_set_hl(0, "LspSignatureActiveParameter", { fg = "#000000", bg = "#89b4fa" })
 	end,
-	custom_highlights = function(colors)
-		return {
-			netrwTreeBar = { fg = colors.surface0 },
-		}
-	end,
 }

@@ -34,7 +34,7 @@ map("n", "<leader>Y", [["+Y]], "Copy to system registry")
 map("i", "<C-c>", "<Esc>")
 
 -- Search and replace
-map("n", "<leader>h", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], "Seach and replace current word")
+map("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], "Seach and replace current word")
 
 -- Diagnostic keymaps
 map("n", "[d", vim.diagnostic.goto_prev, "Go to previous [D]iagnostic message")

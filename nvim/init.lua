@@ -1,1 +1,2 @@
-require 'stefanaru'
+vim.loader.enable()
+require("stefanaru")

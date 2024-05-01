@@ -1,6 +1,6 @@
 return {
 	"stevearc/conform.nvim",
-	lazy = false,
+	event = { "BufReadPre", "BufNewFile" },
 	keys = {
 		{
 			"<leader>f",
@@ -19,7 +19,7 @@ return {
 			-- languages here or re-enable it for the disabled ones.
 			local disable_filetypes = { c = true, cpp = true }
 			return {
-				timeout_ms = 500,
+				timeout_ms = 2000,
 				lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
 			}
 		end,
@@ -37,6 +37,9 @@ return {
 			typescript = { { "prettierd", "prettier" } },
 			yaml = { { "prettierd", "prettier" } },
 			json = { { "prettierd", "prettier" } },
+			javascriptreact = { { "prettierd", "prettier" } },
+			typescriptreact = { { "prettierd", "prettier" } },
+			markdown = { { "prettierd", "prettier" } },
 			sh = { "shfmt" },
 		},
 	},

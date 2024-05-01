@@ -16,7 +16,9 @@ alias .....='cd ../../../../'
 alias bashclear='echo "" > ~/.bash_history'
 alias cls='clear'
 alias rm='rm -iv'
+alias v='nvim'
 alias vim='nvim'
+alias clearshada='find /c/users/stefa/appdata/local/nvim-data/shada -type f -printf "%T+ %p\n" | sort -r | tail +20 | awk "{print \$2}" | xargs -r rm && echo "ShaDa files were cleared"'
 
 # NOTE: CDs
 alias cdvim='cd /x/CLI/terminal-config/nvim'

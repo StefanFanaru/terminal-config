@@ -5,16 +5,14 @@ return {
 	dependencies = {
 		-- Snippet Engine & its associated nvim-cmp source
 		require("plugins.snippets"),
-		"saadparwaiz1/cmp_luasnip",
-
 		-- Adds other completion capabilities.
 		--  nvim-cmp does not ship with all sources by default. They are split
 		--  into multiple repos for maintenance purposes.
-		"hrsh7th/cmp-nvim-lsp",
-		"hrsh7th/cmp-path",
-		"hrsh7th/cmp-cmdline",
-		"hrsh7th/cmp-buffer",
-		"saadparwaiz1/cmp_luasnip",
+		{ "hrsh7th/cmp-nvim-lsp", event = "InsertEnter" },
+		{ "hrsh7th/cmp-path", event = "InsertEnter" },
+		{ "hrsh7th/cmp-cmdline", event = "InsertEnter" },
+		{ "hrsh7th/cmp-buffer", event = "InsertEnter" },
+		{ "saadparwaiz1/cmp_luasnip", event = "InsertEnter" },
 	},
 	config = function()
 		-- See `:help cmp`

@@ -1,3 +1,8 @@
+if not vim.snippet then
+	print("Native snippets are only supported on Neovim >= 0.10.0")
+	return {}
+end
+
 return {
 	{
 		"L3MON4D3/LuaSnip",
@@ -5,9 +10,11 @@ return {
 		version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
 		-- install jsregexp (optional!).
 		build = "make install_jsregexp",
-
+		event = "InsertEnter",
+		-- enabled = false,
 		dependencies = {
 			"rafamadriz/friendly-snippets",
+			event = "InsertEnter",
 			config = function()
 				require("luasnip.loaders.from_vscode").lazy_load()
 			end,
